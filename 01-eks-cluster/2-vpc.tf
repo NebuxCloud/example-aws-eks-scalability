@@ -19,7 +19,8 @@ resource "aws_subnet" "vpc_public_subnets" {
   map_public_ip_on_launch = true
 
   tags = {
-    Name = each.key
+    Name                     = each.key
+    "kubernetes.io/role/elb" = "1"
   }
 }
 
