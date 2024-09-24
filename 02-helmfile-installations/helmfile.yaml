@@ -1,0 +1,13 @@
+repositories:
+  - name: eks-charts
+    url: https://aws.github.io/eks-charts
+  - name: karpenter
+    url: oci://public.ecr.aws/karpenter
+
+releases:
+  - name: aws-load-balancer-controller
+    namespace: kube-system
+    chart: eks-charts/aws-load-balancer-controller
+    version: 1.8.2
+    values:
+      - ./values/aws-load-balancer-controller.yaml

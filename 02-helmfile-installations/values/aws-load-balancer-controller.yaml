@@ -1,0 +1,12 @@
+clusterName: example-cluster
+serviceAccount:
+  create: false
+  name: aws-load-balancer-controller
+
+affinity:
+  podAntiAffinity:
+    requiredDuringSchedulingIgnoredDuringExecution:
+      - labelSelector:
+          matchLabels:
+            app.kubernetes.io/instance: aws-load-balancer-controller
+        topologyKey: kubernetes.io/hostname
