@@ -11,6 +11,10 @@ This is an example of how to deploy Karpenter on EKS using Terraform.
 ## Steps
 
 1. Deploy EKS cluster using terraform inside `01-eks-cluster` directory.
+
+   - `terraform init`
+   - `terraform apply`
+
 2. `aws eks --region eu-west-1 update-kubeconfig --name example-cluster`
 3. Install CRDs for AWS Load Balancer Controller. `kubectl apply -k "github.com/aws/eks-charts/stable/aws-load-balancer-controller/crds?ref=master"`
 4. Deploy AWS Load Balancer Controller, using helmfile inside `02-helmfile-installations` directory; `helmfile apply -f helmfile.yaml`
